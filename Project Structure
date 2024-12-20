@@ -1,0 +1,10 @@
+budget-expenses-app-java/
+├── src/
+│   ├── BudgetApp.java              # Main app logic (Swing UI)
+│   ├── DatabaseHandler.java        # SQLite database interaction
+│   ├── Expense.java                # Expense model class
+│   ├── ExpenseManager.java         # Manages business logic (CRUD operations)
+├── resources/
+│   └── budget-expenses.db          # SQLite database file
+└── lib/
+    └── sqlite-jdbc-<version>.jar   # SQLite JDBC driver (for connecting to SQLite)
