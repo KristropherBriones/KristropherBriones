@@ -1,0 +1,22 @@
+
+### **2. .gitignore**
+
+A **.gitignore** file tells Git which files and directories to ignore. This helps to prevent committing unnecessary files like compiled Java files, IDE configurations, and the SQLite database file.
+
+#### **.gitignore Example:**
+
+```gitignore
+# Ignore compiled Java files
+/bin/
+*.class
+
+# Ignore IDE-specific files (for IntelliJ IDEA, Eclipse, etc.)
+.idea/
+*.iml
+*.vscode/
+
+# Ignore SQLite database
+/resources/budget-expenses.db
+
+# Ignore logs
+*.log
