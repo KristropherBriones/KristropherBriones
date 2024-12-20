@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<project name="BudgetExpensesApp" default="build" basedir=".">
+    <!-- Set default Java version -->
+    <property name="java.version" value="1.8" />
+
+    <!-- Directories -->
+    <property name="src.dir" value="src"/>
+    <property name="bin.dir" value="bin"/>
+    <property name="lib.dir" value="lib"/>
+
+    <!-- Compile -->
+    <target name="compile">
+        <mkdir dir="${bin.dir}"/>
+        <javac srcdir="${src.dir}" destdir="${bin.dir}" includeantruntime="false">
+            <classpath>
+                <pathelement path="${lib.dir}/sqlite-jdbc-<version>.jar"/>
+            </classpath>
+        </javac>
+    </target>
+
+    <!-- Run the application -->
+    <target name="run" depends="compile">
+        <java classname="BudgetApp" fork="true">
+            <classpath>
+                <pathelement path="${bin.dir}"/>
+                <pathelement path="${lib.dir}/sqlite-jdbc-<version>.jar"/>
+            </classpath>
+        </java>
+    </target>
+
+    <!-- Clean compiled files -->
+    <target name="clean">
+        <delete dir="${bin.dir}"/>
+    </target>
+</project>
